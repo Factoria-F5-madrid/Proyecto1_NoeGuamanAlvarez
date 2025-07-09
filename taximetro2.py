@@ -70,7 +70,6 @@ class Taximetro:
         self.tiempo_inicio = 0
         self.tiempo_parado = 0
         self.tiempo_moviendose = 0
-        # None se usa para declarar una variable sin valor
         # "parado" o "moviendose"
         self.estado_viaje = None
         # Momento en que inició el estado actual
@@ -150,7 +149,7 @@ class Taximetro:
         elif opcion_precio == 2:
             fare = (
                 self.tiempo_parado * self.precio_parado_dinamico
-                + self.tiempo_moviendose * self.precio_movimiento_dinamico  # type: ignore
+                + self.tiempo_moviendose * self.precio_movimiento_dinamico
             )
 
         logging.info(
@@ -212,7 +211,8 @@ def display_menu_precios():
 
 def run_taximeter_app():
     """Función principal que ejecuta la aplicación del taxímetro."""
-    taximetro = Taximetro()  # Crea una instancia de la clase Taximetro
+    # Crea una instancia de la clase Taximetro
+    taximetro = Taximetro()
     opcion_precio = 1
 
     while True:
